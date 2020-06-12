@@ -1,0 +1,30 @@
+intents:
+  - greet
+  - goodbye
+  - search_data_type
+  - relationship_item
+  - search_action
+  - search_item
+
+entities:
+  - item
+  - do
+
+actions:
+  - action_search_item
+  - action_search_action
+  - action_relationship_item
+  - action_search_data_type
+
+responses:
+  utter_greet:
+  - text: "Hello! I'm Festo Process Automation Workstation Assistent, what can I do for you"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Good Bye"
+  - text: "See you"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

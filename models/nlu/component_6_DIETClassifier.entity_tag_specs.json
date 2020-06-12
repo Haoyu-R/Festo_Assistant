@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-do",
+      "2": "I-do",
+      "3": "L-do",
+      "4": "U-do",
+      "5": "B-item",
+      "6": "I-item",
+      "7": "L-item",
+      "8": "U-item",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-do": 1,
+      "I-do": 2,
+      "L-do": 3,
+      "U-do": 4,
+      "B-item": 5,
+      "I-item": 6,
+      "L-item": 7,
+      "U-item": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

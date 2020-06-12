@@ -1,0 +1,75 @@
+does the workstation have a valve
+is there a valve in the workstation
+is there a valve
+does a valve exist
+does the workstation have valves
+are there valves in the workstation
+do valves exist
+			
+what action may I use to open the valve
+how can I open the valve
+what action may I use to turn on the valve
+how can I turn on the valve
+how to open the valve
+how to turn on the valve
+
+is the valve associated with pipe1
+is the valve related to pipe1
+does the valve be used in pipe1
+whether the valve is used in pipe1
+is the pipe1 associated with valve
+is the pipe1 related to valve
+does pipe1 has a valve
+
+what is the data type of the input data for the valve
+what is the type of the valve input data
+show me the data type of the valve
+find me the data type of valve
+I need the data type of valve
+Can you tell me the data type of valve
+data type of valve
+
+does the workstation have a pump
+is there a pump in the workstation
+is there a pump
+does a pump exist
+does the workstation have pumps
+are there pumps in the workstation
+do pumps exist
+			
+what action may I use to open the pump
+how can I open the pump
+what action may I use to turn on the pump
+how can I turn on the pump
+how to open the pump
+how to turn on the pump
+
+is the pump associated with pipe2
+is the pump related to pipe2
+does the pump be used in pipe2
+whether the pump is used in pipe2
+is the pipe2 associated with pump
+is the pipe2 related to pump
+does pipe2 has a pump
+
+what is the data type of the input data for the pump
+what is the type of the pump input data
+show me the data type of the pump
+find me the data type of pump
+I need the data type of pump
+Can you tell me the data type of pump
+data type of pump
+
+what action may I use to close the valve
+how can I close the valve
+what action may I use to turn off the valve
+how can I turn off the valve
+how to close the valve
+how to turn off the valve
+			
+what action may I use to close the pump
+how can I close the pump
+what action may I use to turn off the pump
+how can I turn off the pump
+how to close the pump
+how to turn off the pump

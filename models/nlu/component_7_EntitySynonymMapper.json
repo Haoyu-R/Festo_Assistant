@@ -1,0 +1,8 @@
+{
+  "valves": "valve",
+  "pumps": "pump",
+  "open": "turn on",
+  "start": "turn on",
+  "close": "turn off",
+  "stop": "turn off"
+}
