@@ -143,6 +143,8 @@ Based on the intent and entity classification from neural network, we can call d
 4. Ask data type of the component
 ```find_data_type(item)```
 
+Also, the greeting, goodbye and thanks intent messages can be processed and answered.
+
 
 ## Test
 * Test on some questions out of scope
