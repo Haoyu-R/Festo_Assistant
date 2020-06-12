@@ -15,8 +15,8 @@ def get_rasa_output(msg):
     return rasa_interpreter.parse(msg)
 
 
-print("Hello! Welcome to Festo Process Automation Workstation, how can I help you? (you can print \"stop\" at any "
-      "time to terminate)")
+print("Hello! Welcome to Festo Process Automation Workstation, how can I help you?")
+print(" (you can print \"stop\" at any time to terminate)")
 user_input = input("Your message:")
 
 # with open('back_up_test.txt', 'r') as text_questions:
@@ -31,7 +31,7 @@ user_input = input("Your message:")
 
 # Keep get user input
 while user_input != "stop":
-
+    print(" - ", end="")
     rasa_output = get_rasa_output(user_input)
     # print(rasa_output)
     # If the intent confidence is not high, re-ask the question
