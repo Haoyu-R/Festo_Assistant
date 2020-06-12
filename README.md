@@ -37,6 +37,8 @@ All the dependecy will be checked and installed automatically
   <img src="./img/2.png">
 </p>
 
+The main function of the framework is **main.py** and the trained model is in **models/nlu**.
+
 * Training data
 
 To train a rasa NLU, we need to label the sentences with intent and entities. For more information please refer to [here](https://rasa.com/docs/rasa/nlu/training-data-format/#training-data-format).
