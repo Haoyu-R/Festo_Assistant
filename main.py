@@ -1,6 +1,7 @@
 from rasa.nlu.model import Interpreter
 import os
 from functions import *
+import json
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
@@ -33,23 +34,25 @@ user_input = input("Your message:")
 while user_input != "stop":
     print(" - ", end="")
     rasa_output = get_rasa_output(user_input)
-    # print(rasa_output)
-    # If the intent confidence is not high, re-ask the question
-    if rasa_output["intent"]["confidence"] < 0.94:
-        print("Sorry, I didn't understand your question. You may try to rephrase the question")
+    # If want to check the output from rasa
+    print(json.dumps(rasa_output, indent=4))
+
+    # If the intent confidence is not high enough, re-ask the question
+    if rasa_output["intent"]["confidence"] < 0.95:
+        print("Sorry, I didn't understand your question. You may try another question")
         user_input = input("Your message:")
         continue
     intent = rasa_output["intent"]["name"]
     # If different intent is detected
     if "greet" in intent:
-        print("Hi there")
+        print("Hi there~")
     elif "goodbye" in intent:
-        print("Bye")
+        print("Bye~")
     elif "thank" in intent:
         print("You'are welcome, it's my pleasure")
     elif "search_item" in intent:
         if len(rasa_output["entities"]) < 1:
-            print("Sorry, I cannot find it. You may try to rephrase the question")
+            print("Sorry, I cannot find this item. You may try another question")
             user_input = input("Your message:")
             continue
         item = rasa_output["entities"][0]["value"]
@@ -59,7 +62,7 @@ while user_input != "stop":
             print("Sorry, I cannot find {} here".format(item))
     elif "search_action" in intent:
         if len(rasa_output["entities"]) < 2:
-            print("Sorry, I cannot find it. You may try to rephrase the question")
+            print("Sorry, I cannot find this action. You may try another question")
             user_input = input("Your message:")
             continue
         if "do" in rasa_output["entities"][0]["entity"]:
@@ -69,13 +72,13 @@ while user_input != "stop":
             item = rasa_output["entities"][0]["value"]
             do = rasa_output["entities"][1]["value"]
         response = find_action(do, item)
-        if len(response) > 0:
+        if len(find_action(do, item)) > 0:
             print(response)
         else:
             print("Sorry, I cannot find this action")
     elif "relationship_item" in intent:
         if len(rasa_output["entities"]) < 2:
-            print("Sorry, I cannot find their relation. You may try to rephrase the question")
+            print("Sorry, I cannot find their relation. You may try another question")
             user_input = input("Your message:")
             continue
         item1 = rasa_output["entities"][0]["value"]
@@ -86,7 +89,7 @@ while user_input != "stop":
             print("No")
     elif "search_data_type" in intent:
         if len(rasa_output["entities"]) < 1:
-            print("Sorry, I cannot find this data type. You may try to rephrase the question")
+            print("Sorry, I cannot find this data type. You may try another question")
             user_input = input("Your message:")
             continue
         data_type = rasa_output["entities"][0]["value"]
@@ -94,7 +97,7 @@ while user_input != "stop":
         if len(response) > 0:
             print(response)
         else:
-            print("Sorry, I cannot find this data type here")
+            print("Sorry, I cannot find this data type.  You may try another question")
     else:
-        print("Sorry, I didn't understand your question")
+        print("Sorry, I didn't understand your question. You may try to rephrase the question")
     user_input = input("Your message:")

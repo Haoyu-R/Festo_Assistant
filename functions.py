@@ -22,11 +22,6 @@ def find_action(do, item):
         for action in document["actions"]:
             action_lower = action.lower()
             if (item in action_lower) and (do in document["actions"][action]["@type"].lower()):
-                # if do in action_lower:
-                #     return "You should take action {} with type of {}".format(action, document["actions"][action]["@type"])
-                # else:
-                #     action_type = document["actions"][action]["@type"].lower()
-                #     if do in action_type:
                 return "You should take action {} with type of {}".format(action, document["actions"][action]["@type"])
     except Exception as e:
         return ""
@@ -51,7 +46,7 @@ def find_data_type(item):
         for property_name in document["properties"]:
             property_name_lower = property_name.lower()
             if item in property_name_lower:
-                return "It's {}".format(document["properties"][property_name]["properties"][property_name]["type"])
+                return "The data type is {}".format(document["properties"][property_name]["properties"][property_name]["type"])
     except Exception as e:
         return ""
     return ""
