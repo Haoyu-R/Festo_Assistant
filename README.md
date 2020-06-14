@@ -22,7 +22,7 @@ To use the repository, clone it to your local machine:
 
 After that, navigate to the directory.
 
-## Which Rasa version should I use?
+## Rasa version
 
 The code in this repository is compatible with latest release of Rasa. 
 
@@ -55,9 +55,9 @@ The training data for this repo can be found in data/nlu.md
     analyzer: "char_wb"              // charactre n-grams
     min_ngram: 1
     max_ngram: 4
-  - name: DIETClassifier // Intent and entity classification
+  - name: DIETClassifier             // Intent and entity classification
     epochs: 100 
-  - name: ResponseSelector // not used here
+  - name: ResponseSelector           // not used here
 ```
 
 * Output of neural network
@@ -135,9 +135,9 @@ Here is an example of output when user type msg: **I want to turn on the valve**
 Based on the intent and entity classification from neural network, we can call different functions in the **functions.py** to search certain places in the document. And the questions are categorized into four groups:
 
 1. Ask about certain component in the document
-```find_item(item_name)```
+```find_item(item)```
 2. Ask about certain action in the document
-```find_action(action_name)```
+```find_action(action, item)```
 3. Ask relationship between component
 ```find_relationship_items(item1, item2)```
 4. Ask data type of the component
@@ -147,7 +147,7 @@ Also, the greeting, goodbye and thanks intent messages can be processed and answ
 
 
 ## Test
-* Test on some questions out of scope
+* Test on some questions out of scope, the answers from the app are correct and same
 ```
 * please help with my ice cream it's dripping
 * no wait go back i want a dripping ice cream but a cone that catches it so you can drink the ice cream later
@@ -185,7 +185,7 @@ Also, the greeting, goodbye and thanks intent messages can be processed and answ
  - Sorry, I didn't understand your question. You may try to rephrase the question
 ```
 
-* Test on different variantions of target questions with the same meaning, we get the same answer
+* Test on different variantions of target questions with the same meaning, the answers from the app are correct and consistent
 ```
 * does the workstation have a valve
 * is there a valve in the workstation
@@ -195,7 +195,7 @@ Also, the greeting, goodbye and thanks intent messages can be processed and answ
 * are there valves in the workstation
 * do valves exist
 
-Yes, there is a valve
+ - Yes, there is a valve
 		
 
 * what action may I use to open the valve
@@ -205,7 +205,7 @@ Yes, there is a valve
 * how to open the valve
 * how to turn on the valve
 
-You should take action OpenValve with type of iot:TurnOn
+ - You should take action OpenValve with type of iot:TurnOn
 
 * is the valve associated with pipe1
 * is the valve related to pipe1
@@ -215,7 +215,7 @@ You should take action OpenValve with type of iot:TurnOn
 * is the pipe1 related to valve
 * does pipe1 has a valve
 
-Yes
+ - Yes
 
 * what is the data type of the input data for the valve
 * what is the type of the valve input data
@@ -225,7 +225,7 @@ Yes
 * Can you tell me the data type of valve
 * data type of valve
 
-It's boolean
+ - The data type is boolean
 
 * does the workstation have a pump
 * is there a pump in the workstation
@@ -235,7 +235,7 @@ It's boolean
 * are there pumps in the workstation
 * do pumps exist
 
-Yes, there is a pump
+ - Yes, there is a pump
 
 * what action may I use to open the pump
 * how can I open the pump
@@ -244,7 +244,7 @@ Yes, there is a pump
 * how to open the pump
 * how to turn on the pump
 
-You should take action StartPump with type of iot:TurnOn
+ - You should take action StartPump with type of iot:TurnOn
 
 * is the pump associated with pipe2
 * is the pump related to pipe2
@@ -254,7 +254,7 @@ You should take action StartPump with type of iot:TurnOn
 * is the pipe2 related to pump
 * does pipe2 has a pump
 
-Yes
+ - Yes
 
 * what is the data type of the input data for the pump
 * what is the type of the pump input data
@@ -264,7 +264,7 @@ Yes
 * Can you tell me the data type of pump
 * data type of pump
 
-It's boolean
+ - The data type is boolean
 
 * what action may I use to close the valve
 * how can I close the valve
@@ -273,7 +273,7 @@ It's boolean
 * how to close the valve
 * how to turn off the valve
 
-You should take action CloseValve with type of iot:TurnOff
+ - You should take action CloseValve with type of iot:TurnOff
 
 * what action may I use to close the pump
 * how can I close the pump
@@ -282,5 +282,5 @@ You should take action CloseValve with type of iot:TurnOff
 * how to close the pump
 * how to turn off the pump
 
-You should take action StopPump with type of iot:TurnOff
+ - You should take action StopPump with type of iot:TurnOff
 ```
